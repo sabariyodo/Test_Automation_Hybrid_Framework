@@ -12,10 +12,10 @@ public class TS_OHRM_001 extends WebBase {
 	@BeforeTest
 	public void setValues() {
 
-		testName = "TS_OHRM_001";
+		testName = "TS_OHRM_002";
 		testDescription = "Login";
 		category = "Smoke_test";
-		testAuthor = "Sabari";
+		testAuthor = "Sabarivasan";
 	}
 	
 	@Test

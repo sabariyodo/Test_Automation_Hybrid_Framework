@@ -17,6 +17,8 @@ public class WebBase extends Web_Html_Reporter {
 		driver.manage().window().maximize();
 
 	}
+	
+	
 
 	@AfterMethod(alwaysRun = true)
 

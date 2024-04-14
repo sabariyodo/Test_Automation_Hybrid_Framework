@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+import java.io.File;
 
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -36,7 +37,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Design.ExcelSpecificActionsForWeb;
 import Design.WebSpecificActions;
-import io.appium.java_client.functions.ExpectedCondition;
 
 
 public class WebImplementationBase implements ExcelSpecificActionsForWeb, WebSpecificActions {
@@ -68,7 +68,9 @@ public class WebImplementationBase implements ExcelSpecificActionsForWeb, WebSpe
 			HashMap<String, Integer> testdataID = new HashMap<>();
 			String key;
 			int value;
-			XSSFWorkbook workbook = new XSSFWorkbook(getConfigurations("testdatapath"));
+			String filePath= new File(getConfigurations("testdatapath")).getAbsolutePath();
+			XSSFWorkbook workbook = new XSSFWorkbook(filePath);
+			System.out.println(getConfigurations("testdatapath"));
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 			int lastCellNum = sheet.getLastRowNum();
 			for (int i = 1; i <= lastCellNum; i++) {
